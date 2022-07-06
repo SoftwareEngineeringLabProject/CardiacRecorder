@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/CardiacRecorder.iml" filepath="$PROJECT_DIR$/.idea/CardiacRecorder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/firebase.iml" filepath="$PROJECT_DIR$/.idea/modules/firebase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/firebase.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/firebase.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/firebase.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/firebase.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/firebase.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/firebase.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/firebase.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/firebase.app.unitTest.iml" />
     </modules>
   </component>
 </project>
