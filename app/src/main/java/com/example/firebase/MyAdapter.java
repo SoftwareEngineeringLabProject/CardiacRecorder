@@ -47,6 +47,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.ss.setText(data.getSs());
         holder.ds.setText(data.getDs());
         holder.hb.setText(data.getHb());
+        holder.comment.setText(data.getComment());
+        holder.time.setText(data.getTime());
+        holder.date.setText(data.getDate());
+
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,13 +121,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView ss,ds,hb;
+        TextView ss,ds,hb,comment,date,time;
         Button edit,delete;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             ss=itemView.findViewById(R.id.Vss);
             ds=itemView.findViewById(R.id.Vds);
             hb=itemView.findViewById(R.id.Vhb);
+            comment=itemView.findViewById(R.id.Vcomment);
+            date=itemView.findViewById(R.id.Vdate);
+            time=itemView.findViewById(R.id.Vtime);
             edit=itemView.findViewById(R.id.edit);
             delete=itemView.findViewById(R.id.delete);
 

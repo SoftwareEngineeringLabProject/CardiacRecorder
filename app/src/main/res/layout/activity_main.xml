@@ -12,14 +12,56 @@
 
         android:textColor="@color/white"
         android:gravity="center"
-        android:textSize="25dp"
+        android:textSize="23dp"
         android:fontFamily="@font/"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Date"
+        android:textColor="#91B2C7"
+        android:textStyle="bold"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="#91B2C7"
+        android:backgroundTint="#91B2C7"
+        android:gravity="center"
+        android:hint="dd-mm-yyyy"
+        android:id="@+id/date"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Time"
+        android:textColor="#91B2C7"
+        android:textStyle="bold"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="#91B2C7"
+        android:backgroundTint="#91B2C7"
+        android:gravity="center"
+        android:hint="hh:mm"
+        android:id="@+id/time"
+        />
     <TextView
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="5dp"
         android:text="Systolic Pressure"
@@ -27,18 +69,19 @@
         android:textStyle="bold"/>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:textColor="#91B2C7"
         android:backgroundTint="#91B2C7"
         android:gravity="center"
+        android:hint="mm Hg"
         android:id="@+id/ss" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:text="Diastolic Pressure"
@@ -46,18 +89,19 @@
         android:textStyle="bold"/>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:textColor="#91B2C7"
         android:backgroundTint="#91B2C7"
         android:gravity="center"
+        android:hint="mm Hg"
         android:id="@+id/ds"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:text="Heart Beat"
@@ -65,18 +109,19 @@
         android:textStyle="bold"/>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:textColor="#91B2C7"
         android:backgroundTint="#91B2C7"
         android:gravity="center"
+        android:hint="beats per minute"
         android:id="@+id/hb"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:text="Comment"
@@ -84,27 +129,27 @@
         android:textStyle="bold"/>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:textColor="#91B2C7"
         android:backgroundTint="#91B2C7"
         android:gravity="center"
+        android:hint="Up to 20 charecters"
         android:id="@+id/comment" />
     <Button
+        android:id="@+id/submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
         android:layout_marginTop="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/design"
         android:backgroundTint="#C7A691"
-        android:textSize="21dp"
         android:gravity="center"
-        android:textStyle="bold"
-        android:id="@+id/submit"
-        android:background="@drawable/design"/>
-
+        android:text="Add"
+        android:textSize="21dp"
+        android:textStyle="bold" />
 
 
 </LinearLayout>

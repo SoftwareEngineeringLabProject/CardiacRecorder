@@ -8,8 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
@@ -45,9 +48,9 @@ public class home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        getSupportActionBar().hide();
         recyclerView= findViewById(R.id.list);
         recyclerView.setLayoutManager(new GridLayoutManager(this,2));
-
 
         FirebaseRecyclerOptions<Data> options =
                 new FirebaseRecyclerOptions.Builder<Data>()
@@ -55,7 +58,6 @@ public class home extends AppCompatActivity {
                         .build();
         mainAdapter=new MainAdapter(options);
         recyclerView.setAdapter(mainAdapter);
-
 
 
 
