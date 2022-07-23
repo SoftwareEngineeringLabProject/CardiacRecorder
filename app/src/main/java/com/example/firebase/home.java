@@ -27,7 +27,6 @@ public class home extends AppCompatActivity {
 
     RecyclerView recyclerView;
     DatabaseReference database;
-    MyAdapter myAdapter;
     ArrayList<Data> list;
     MainAdapter mainAdapter;
 

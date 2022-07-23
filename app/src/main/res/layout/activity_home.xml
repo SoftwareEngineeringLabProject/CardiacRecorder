@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".home"
-    android:paddingTop="20dp">
+    android:paddingTop="20dp"
+    android:id="@+id/home_page"
+    >
     <Button
         android:layout_height="40dp"
         android:layout_width="match_parent"
@@ -14,6 +16,16 @@
         tools:ignore="MissingConstraints"
         android:id="@+id/add"/>
 
+<!--    <android.support.v7.widget.RecyclerView-->
+<!--        android:paddingTop="50dp"-->
+<!--        android:id="@+id/list"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+<!--    </android.support.v7.widget.RecyclerView>-->
     <androidx.recyclerview.widget.RecyclerView
         android:paddingTop="50dp"
         android:id="@+id/list"

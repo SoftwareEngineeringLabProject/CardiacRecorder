@@ -6,7 +6,8 @@
     app:cardElevation="20dp"
     app:cardCornerRadius="10dp"
     android:layout_margin="16dp"
-    android:backgroundTint="#91B2C7">
+    android:backgroundTint="#91B2C7"
+    android:id="@+id/item">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -167,10 +168,10 @@
                 android:text="edit"
                 android:textSize="9dp"
                 android:textStyle="bold"
-                android:id="@+id/edit"
+                android:id="@+id/Vedit"
                 />
             <Button
-                android:id="@+id/delete"
+                android:id="@+id/Vdelete"
                 android:layout_marginLeft="5dp"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
@@ -184,4 +185,5 @@
 
 
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>

@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/addpage"
+    android:id="@+id/details_page"
     android:windowSoftInputMode="adjustPan">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Enter Details"
+        android:text="Details"
         android:textStyle="bold"
         android:background="#4682B4"
 
@@ -26,17 +26,17 @@
         android:text="Date"
         android:textColor="#91B2C7"
         android:textStyle="bold"/>
-    <EditText
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:textColor="#91B2C7"
-        android:backgroundTint="#91B2C7"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="dd-mm-yyyy"
-        android:id="@+id/date"
-        />
+        android:text="date"
+        android:textSize="18dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textColor="#91B2C7"
+        android:textStyle="bold"
+        android:id="@+id/ddate"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,17 +47,17 @@
         android:text="Time"
         android:textColor="#91B2C7"
         android:textStyle="bold"/>
-    <EditText
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:textColor="#91B2C7"
-        android:backgroundTint="#91B2C7"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="hh:mm"
-        android:id="@+id/time"
-        />
+        android:textSize="18dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="time"
+        android:textColor="#91B2C7"
+        android:textStyle="bold"
+        android:id="@+id/dtime"/>
     <TextView
 
         android:layout_width="match_parent"
@@ -69,16 +69,17 @@
         android:text="Systolic Pressure"
         android:textColor="#91B2C7"
         android:textStyle="bold"/>
-    <EditText
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:textColor="#91B2C7"
-        android:backgroundTint="#91B2C7"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="mm Hg"
-        android:id="@+id/ss" />
+        android:textSize="18dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="ss"
+        android:textColor="#91B2C7"
+        android:textStyle="bold"
+        android:id="@+id/dss"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -89,16 +90,17 @@
         android:text="Diastolic Pressure"
         android:textColor="#91B2C7"
         android:textStyle="bold"/>
-    <EditText
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:textColor="#91B2C7"
-        android:backgroundTint="#91B2C7"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="mm Hg"
-        android:id="@+id/ds"/>
+        android:textSize="18dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="ds"
+        android:textColor="#91B2C7"
+        android:textStyle="bold"
+        android:id="@+id/dds"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -109,16 +111,17 @@
         android:text="Heart Beat"
         android:textColor="#91B2C7"
         android:textStyle="bold"/>
-    <EditText
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:textColor="#91B2C7"
-        android:backgroundTint="#91B2C7"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="beats per minute"
-        android:id="@+id/hb"/>
+        android:textSize="18dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="hb"
+        android:textColor="#91B2C7"
+        android:textStyle="bold"
+        android:id="@+id/dhb"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -129,29 +132,16 @@
         android:text="Comment"
         android:textColor="#91B2C7"
         android:textStyle="bold"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:textColor="#91B2C7"
-        android:backgroundTint="#91B2C7"
-        android:gravity="center"
-        android:hint="Up to 20 charecters"
-        android:id="@+id/comment" />
-    <Button
-        android:id="@+id/submit"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginRight="25dp"
-        android:background="@drawable/design"
-        android:backgroundTint="#C7A691"
         android:gravity="center"
-        android:text="Add"
-        android:textSize="21dp"
-        android:textStyle="bold" />
-
+        android:textSize="18dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="comment"
+        android:textColor="#91B2C7"
+        android:textStyle="bold"
+        android:id="@+id/dcomment"/>
 
 </LinearLayout>

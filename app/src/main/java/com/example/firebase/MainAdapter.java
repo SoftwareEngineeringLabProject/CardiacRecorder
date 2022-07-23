@@ -1,6 +1,8 @@
 package com.example.firebase;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,21 +25,17 @@ import com.orhanobut.dialogplus.ViewHolder;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class MainAdapter extends FirebaseRecyclerAdapter<Data,MainAdapter.myViewHolder> {
 
-    /**
-     * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
-     * {@link FirebaseRecyclerOptions} for configuration options.
-     *
-     * @param options
-     */
     public MainAdapter(@NonNull FirebaseRecyclerOptions<Data> options) {
         super(options);
     }
-
+    int pos;
     @Override
-    protected void onBindViewHolder(@NonNull myViewHolder holder, final int position, @NonNull Data model) {
+    protected void onBindViewHolder(@NonNull myViewHolder holder, @SuppressLint("RecyclerView") final int position, @NonNull Data model) {
+            pos=position;
             holder.ss.setText(model.getSs());
             int temp=Integer.parseInt(holder.ss.getText().toString());
             if(temp<90 || temp>140){
@@ -49,10 +47,6 @@ public class MainAdapter extends FirebaseRecyclerAdapter<Data,MainAdapter.myView
                 holder.ds.setTextColor(Color.RED);
             }
             holder.hb.setText(model.getHb());
-//        temp=Integer.parseInt(holder.hb.getText().toString());
-//        if(temp<60 || temp>90){
-//            holder.hb.setTextColor(Color.RED);
-//        }
             holder.comment.setText(model.getComment());
             holder.date.setText(model.getDate());
             holder.time.setText(model.getTime());
@@ -95,7 +89,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<Data,MainAdapter.myView
                             map.put("date", edate.getText().toString());
                             map.put("time", etime.getText().toString());
                             DAOdata daOdata = new DAOdata();
-                            FirebaseDatabase.getInstance().getReference().child("Data").child(getRef(position).getKey()).updateChildren(map)
+                            FirebaseDatabase.getInstance().getReference().child("Data").child(Objects.requireNonNull(getRef(position).getKey())).updateChildren(map)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void unused) {
@@ -167,8 +161,32 @@ public class MainAdapter extends FirebaseRecyclerAdapter<Data,MainAdapter.myView
             comment=itemView.findViewById(R.id.Vcomment);
             date=itemView.findViewById(R.id.Vdate);
             time=itemView.findViewById(R.id.Vtime);
-            edit=itemView.findViewById(R.id.edit);
-            delete=itemView.findViewById(R.id.delete);
+            edit=itemView.findViewById(R.id.Vedit);
+            delete=itemView.findViewById(R.id.Vdelete);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(itemView.getContext(), ss.getText().toString()+"/"+ds.getText().toString(), Toast.LENGTH_SHORT).show();
+                    final DialogPlus dialogPlus= DialogPlus.newDialog(itemView.getContext()).setContentHolder(new ViewHolder(R.layout.details))
+                            .setExpanded(true,2300).create();
+                    View view=dialogPlus.getHolderView();
+                    TextView dss=view.findViewById(R.id.dss);
+                    TextView dds=view.findViewById(R.id.dds);
+                    TextView dhb=view.findViewById(R.id.dhb);
+                    TextView dcomment=view.findViewById(R.id.dcomment);
+                    TextView dtime=view.findViewById(R.id.dtime);
+                    TextView ddate=view.findViewById(R.id.ddate);
+                    dss.setText(ss.getText().toString());
+                    dds.setText(ds.getText().toString());
+                    dhb.setText(hb.getText().toString());
+                    dcomment.setText(comment.getText().toString());
+                    dtime.setText(time.getText().toString());
+                    ddate.setText(date.getText().toString());
+                    dialogPlus.show();
+
+                }
+            });
+
         }
     }
 }
