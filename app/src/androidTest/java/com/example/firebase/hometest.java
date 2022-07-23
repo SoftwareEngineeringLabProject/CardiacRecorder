@@ -29,6 +29,7 @@ import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner;
 
 import org.hamcrest.Matcher;
 import org.hamcrest.StringDescription;
+import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.Description;
@@ -42,16 +43,19 @@ import androidx.test.espresso.UiController;
 import androidx.test.espresso.ViewAction;
 
 import org.hamcrest.Matcher;
+import org.junit.runners.MethodSorters;
 
 @RunWith(AndroidJUnit4ClassRunner.class)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @LargeTest
 public class hometest {
 //    ActivityScenario activityScenario = ActivityScenario.launch(home.class);
     @Rule
     public ActivityScenarioRule<home> activityRule =
             new ActivityScenarioRule<>(home.class);
+
     @Test
-    public void test_add_btn() {
+    public void a_test_add_btn() {
         onView(withId(R.id.home_page)).check(matches(isDisplayed()));
         onView(withId(R.id.list)).check(matches(isDisplayed()));
         onView(withId(R.id.add)).perform(click());
@@ -60,7 +64,7 @@ public class hometest {
 
 
     @Test
-    public void add_information() {
+    public void b_add_information() {
         onView(withId(R.id.add)).perform(click());
         onView(withId(R.id.date)).perform(ViewActions.typeText("22-07-2022"));
         onView(withId(R.id.time)).perform(ViewActions.typeText("12:25AM"));
@@ -76,7 +80,7 @@ public class hometest {
         onView(withId(R.id.home_page)).check(matches(isDisplayed()));
     }
 
-    @Test public void added_info_test(){
+    @Test public void c_added_info_test(){
         onView(withId(R.id.list)).check(matches(isDisplayed()));
         onView(withId(R.id.home_page)).check(matches(isDisplayed()));
         onView(withId(R.id.list)).perform(RecyclerViewActions.scrollToPosition(2));
@@ -115,7 +119,7 @@ public class hometest {
     }
 
     @Test
-    public void edit_test() {
+    public void d_edit_test() {
         onView(withId(R.id.list)).perform(RecyclerViewActions.scrollToPosition(0));
         SystemClock.sleep(3000);
         onView(withId(R.id.list)).perform(
@@ -143,7 +147,7 @@ public class hometest {
 
 
     @Test
-    public void delete_test() {
+    public void e_delete_test() {
         onView(withId(R.id.list)).perform(RecyclerViewActions.scrollToPosition(0));
         SystemClock.sleep(3000);
         onView(withId(R.id.list)).perform(
@@ -155,7 +159,7 @@ public class hometest {
     }
 
     @Test
-    public void delete_cancel_test() {
+    public void f_delete_cancel_test() {
         onView(withId(R.id.list)).perform(RecyclerViewActions.scrollToPosition(0));
         SystemClock.sleep(3000);
         onView(withId(R.id.list)).perform(
@@ -168,7 +172,7 @@ public class hometest {
 
 
     @Test
-    public void details_test() {
+    public void g_details_test() {
         onView(withId(R.id.list)).check(matches(isDisplayed()));
         onView(withId(R.id.home_page)).check(matches(isDisplayed()));
         onView(withId(R.id.list)).perform(RecyclerViewActions.scrollToPosition(0));
