@@ -54,6 +54,9 @@ public class hometest {
     public ActivityScenarioRule<home> activityRule =
             new ActivityScenarioRule<>(home.class);
 
+    /**
+     * checks the add button works or not
+     */
     @Test
     public void a_test_add_btn() {
         onView(withId(R.id.home_page)).check(matches(isDisplayed()));
@@ -62,7 +65,9 @@ public class hometest {
         onView(withId(R.id.addpage)).check(matches(isDisplayed()));
     }
 
-
+    /**
+     * checks if the information is added or not
+     */
     @Test
     public void b_add_information() {
         onView(withId(R.id.add)).perform(click());
@@ -80,7 +85,11 @@ public class hometest {
         onView(withId(R.id.home_page)).check(matches(isDisplayed()));
     }
 
-    @Test public void c_added_info_test(){
+    /**
+     * checks added data is shown on the card or not
+     */
+    @Test
+    public void c_added_info_test(){
         onView(withId(R.id.list)).check(matches(isDisplayed()));
         onView(withId(R.id.home_page)).check(matches(isDisplayed()));
         onView(withId(R.id.list)).perform(RecyclerViewActions.scrollToPosition(2));
@@ -118,6 +127,9 @@ public class hometest {
 
     }
 
+    /**
+     * checks the data can be edited or not
+     */
     @Test
     public void d_edit_test() {
         onView(withId(R.id.list)).perform(RecyclerViewActions.scrollToPosition(0));
@@ -145,7 +157,9 @@ public class hometest {
         SystemClock.sleep(3000);
     }
 
-
+    /**
+     * checks the added data can be deleted or not
+     */
     @Test
     public void e_delete_test() {
         onView(withId(R.id.list)).perform(RecyclerViewActions.scrollToPosition(0));
@@ -158,6 +172,9 @@ public class hometest {
                 .perform(click());
     }
 
+    /**
+     * checks the cancel button works or not
+     */
     @Test
     public void f_delete_cancel_test() {
         onView(withId(R.id.list)).perform(RecyclerViewActions.scrollToPosition(0));
@@ -170,7 +187,9 @@ public class hometest {
                 .perform(click());
     }
 
-
+    /**
+     * checks if the details page pops up or not
+     */
     @Test
     public void g_details_test() {
         onView(withId(R.id.list)).check(matches(isDisplayed()));

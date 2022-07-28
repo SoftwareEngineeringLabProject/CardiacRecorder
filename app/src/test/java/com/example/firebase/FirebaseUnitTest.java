@@ -7,7 +7,9 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.junit.function.ThrowingRunnable;
 
-
+/**
+ * unit test
+ */
 public class FirebaseUnitTest {
     private  DataArrayList mockDataList(){
         DataArrayList dataArrayList =new DataArrayList();
@@ -15,10 +17,18 @@ public class FirebaseUnitTest {
         return  dataArrayList;
     }
 
+    /**
+     *
+     * @return returns mock data type
+     */
+
     private Data mockData(){
         return  new Data("120","80","60","good","21-07-2022","9:28");
     }
 
+    /**
+     * add data
+     */
     @Test
     public void testAddData(){
         DataArrayList dataArrayList=mockDataList();
@@ -32,6 +42,9 @@ public class FirebaseUnitTest {
         assertTrue(dataArrayList.getDatas().contains(data));
     }
 
+    /**
+     * doesnot add the repeated data and returns an exception if the data already exits
+     */
     @Test
     public void testAddException(){
         DataArrayList cardiacArrayList=new DataArrayList();
@@ -46,6 +59,9 @@ public class FirebaseUnitTest {
         });
     }
 
+    /**
+     * verifies the addition of data
+     */
     @Test
     public void testGetDatas(){
         DataArrayList dataArrayList=mockDataList();
@@ -64,6 +80,9 @@ public class FirebaseUnitTest {
         assertEquals(0,d2.compareTo(dataArrayList.getDatas().get(2)));
     }
 
+    /**
+     * delete data
+     */
     @Test
     public void testdelete(){
         DataArrayList dataArrayList=new DataArrayList();
@@ -79,6 +98,9 @@ public class FirebaseUnitTest {
         assertTrue(!dataArrayList.getDatas().contains(d1));
     }
 
+    /**
+     * tests if the deleted data does not exist and throws an exception
+     */
     @Test
     public void testDeleteException(){
         DataArrayList dataArrayList=new DataArrayList();
@@ -98,6 +120,9 @@ public class FirebaseUnitTest {
         });
     }
 
+    /**
+     * counts the number of elements
+     */
     @Test
     public void testcount(){
         DataArrayList dataArrayList=new DataArrayList();

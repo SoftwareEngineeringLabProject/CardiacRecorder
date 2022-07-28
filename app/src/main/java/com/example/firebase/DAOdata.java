@@ -12,6 +12,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class DAOdata {
     private DatabaseReference databaseReference;
+
+    /**
+     * This class connects to the firebase database
+     */
     public DAOdata(){
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         databaseReference = db.getReference(Data.class.getSimpleName());
@@ -30,6 +34,12 @@ public class DAOdata {
             }
         };
     }
+
+    /**
+     *
+     * @param data b
+     * add data into the database
+     */
     public void add(Data data){
 
         databaseReference.push().setValue(data);
